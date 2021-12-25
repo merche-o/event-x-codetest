@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import Main from './main'
 
 export default function Home() {
   return (
@@ -10,9 +11,9 @@ export default function Home() {
         <meta name="description" content="EventX demo" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      EventX
+      <Main />
       <footer className={styles.footer}>
+        Made by Olivier Mercher
       </footer>
     </div>
   )
