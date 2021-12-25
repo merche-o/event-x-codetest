@@ -13,6 +13,7 @@ export default function Home() {
       </Head>
       <Main />
       <footer className={styles.footer}>
+        Made by Olivier Mercher
       </footer>
     </div>
   )

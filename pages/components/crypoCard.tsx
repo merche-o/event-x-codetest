@@ -1,6 +1,5 @@
 import React from 'react';
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import { Box, Grid, Paper } from '@material-ui/core';
+import { Grid, Paper } from '@material-ui/core';
 import { CryptoData } from '../model/cryptoData';
 import { UseStyles } from '../styles/cryptoCardStyle'
 interface CryptoDataProps {
