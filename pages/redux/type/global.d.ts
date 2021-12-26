@@ -1,6 +1,6 @@
 
-
+import { CryptoDataState } from "../state/cryptoStateData"
 
 export type GlobalState = {
-    coinDataState: coinD,
+    cryptoDataState: CryptoDataState,
 }
