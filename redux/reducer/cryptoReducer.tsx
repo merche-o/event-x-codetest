@@ -30,9 +30,15 @@ const initialItemData: CryptoDataState = {
                     }
                 }
               } else {
+                console.log("here")
+                console.log(tmp)
+                console.log(coinStringTable[action.request][0])
+                state.data.push(action.data)
+                console.log(state.data)
+
                return {
                 ...state,
-                data: state.data.concat(action.data),
+                data: state.data,
                 }
             }
     }

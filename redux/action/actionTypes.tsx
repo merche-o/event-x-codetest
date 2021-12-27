@@ -1,1 +1,3 @@
 export const GET_CRYPTO_DATA = "GET_CRYPTO_DATA"
+
+export const LAUNCH_SEARCH = "LAUNCH_SEARCH"

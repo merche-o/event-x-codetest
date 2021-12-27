@@ -3,15 +3,18 @@ import { Grid } from '@mui/material';
 import { UseStyles } from '../react-styles/mainPageStyle';
 import { Provider } from 'react-redux';
 import store from '../redux/store'
+import SearchAppBar from '../components/searchBar';
+import { coinStringTable } from '../env/translationTable';
 
 
 export default function Main() {
-    var data  = ["btc-usd", "eth-usd", "ltc-usd"];
+    var data  = Object.keys(coinStringTable);
     const classes = UseStyles();
 
 return(
     <Provider store={store}>
-
+ <SearchAppBar
+      />
     <div>
     <h2 className={classes.title}>Cryptocurrency Realtime Price</h2>
     <Grid container spacing={0} alignContent="flex-start" alignItems="flex-start" direction="row">

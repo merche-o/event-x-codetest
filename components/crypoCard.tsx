@@ -18,9 +18,11 @@ export default function CryptoCard(props: CryptoDataProps) {
     const data : CryptoData | undefined = useSelector((state: GlobalState) => state.cryptoDataState.data).find(x => x.base === coinStringTable[props.data][0])
 
     useEffect(() => {
+        
         dispatch(getCryptos(props.data))
         const timer = setInterval(
-       () =>  dispatch(getCryptos(props.data)), 30000)
+       () =>  {
+       dispatch(getCryptos(props.data))}, 30000)
     }, [data, dispatch, props.data])
     return (
         
