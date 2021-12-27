@@ -16,7 +16,7 @@ return(
     <h2 className={classes.title}>Cryptocurrency Realtime Price</h2>
     <Grid container spacing={0} alignContent="flex-start" alignItems="flex-start" direction="row">
      { data.map((value, index) => {
-          return <Grid item md={3} className={classes.gridItgem} key={index} ><CryptoCard data={value}/></Grid>
+          return <Grid item md={3} className={classes.gridItgem} key={index} > <CryptoCard data={value}/> </Grid>
     })}
 
        </Grid>
