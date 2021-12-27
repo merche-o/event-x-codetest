@@ -1,15 +1,14 @@
 import React, { Dispatch, useState } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
-import { createStyles, fade, useTheme, makeStyles, ThemeProvider, Theme } from '@mui/styles';
+import { createStyles, makeStyles } from '@mui/styles';
 import Autocomplete from "@mui/material/Autocomplete";
 import { useDispatch, useSelector } from 'react-redux';
 import { GlobalState } from '../redux/type/global';
 import { launchSearch } from '../redux/action/searchAction';
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles(
   createStyles({
     root: {
       flexGrow: 1,

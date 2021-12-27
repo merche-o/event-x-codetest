@@ -1,6 +1,6 @@
-import { createStyles, makeStyles, Theme } from "@mui/styles";
+import { createStyles, makeStyles } from "@mui/styles";
 
-export const UseStyles = makeStyles((theme: Theme) =>
+export const UseStyles = makeStyles(
 createStyles({
   gridContainer: {
     padding: "15px",
