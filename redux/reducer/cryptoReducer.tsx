@@ -1,11 +1,11 @@
 import { coinStringTable } from "../../env/translationTable";
 import * as actionTypes from "../action/actionTypes"
 import { CryptoDataAction, CryptoDataState } from "../state/cryptoStateData"
-const util = require('util');
+var _ = require('lodash/lang');
 
 
 const initialItemData: CryptoDataState = {
-    data: undefined
+    data: []
   }
 
   export const reducerCryptoData = (
@@ -14,10 +14,10 @@ const initialItemData: CryptoDataState = {
   ): CryptoDataState => {
     switch (action.type) {
       case actionTypes.GET_CRYPTO_DATA:
-          if (state.data) {
+       
               var tmp = state.data.find(x => x.base === coinStringTable[action.request][0])
               if (tmp) {
-                if (util.isDeepStrictEqual(tmp, action.data)) {
+                if (_.isEqual(tmp, action.data)) {
                     return {
                         ...state,
                     }
@@ -35,12 +35,6 @@ const initialItemData: CryptoDataState = {
                 data: state.data.concat(action.data),
                 }
             }
-        } else {
-            return {
-                ...state,
-                data: [action.data],
-                }
-        }
     }
     return state
   }

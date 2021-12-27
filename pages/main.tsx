@@ -1,13 +1,12 @@
-import CryptoCard from './components/crypoCard'
-import { CryptoData } from './model/cryptoData'
+import CryptoCard from '../components/crypoCard'
 import { Grid } from '@material-ui/core';
-import { UseStyles } from './styles/mainPageStyle';
+import { UseStyles } from '../react-styles/mainPageStyle';
 import { Provider } from 'react-redux';
-import store from './redux/store'
+import store from '../redux/store'
 
 
 export default function Main() {
-    var data  = ["btc-usd", "eth-usd"];
+    var data  = ["btc-usd", "eth-usd", "ltc-usd"];
     const classes = UseStyles();
 
 return(
@@ -16,9 +15,9 @@ return(
     <div>
     <h2 className={classes.title}>Cryptocurrency Realtime Price</h2>
     <Grid container spacing={0} alignContent="flex-start" alignItems="flex-start" direction="row">
-    <Grid item md={3} className={classes.gridItgem}><CryptoCard data={data[0]}/></Grid>
-    <Grid item md={3} className={classes.gridItgem}><CryptoCard data={data[1]}/></Grid>
-    
+     { data.map((value, index) => {
+          return <Grid item md={3} className={classes.gridItgem} key={index} ><CryptoCard data={value}/></Grid>
+    })}
 
        </Grid>
     
