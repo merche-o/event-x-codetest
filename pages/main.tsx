@@ -1,5 +1,5 @@
 import CryptoCard from '../components/crypoCard'
-import { Grid } from '@material-ui/core';
+import { Grid } from '@mui/material';
 import { UseStyles } from '../react-styles/mainPageStyle';
 import { Provider } from 'react-redux';
 import store from '../redux/store'

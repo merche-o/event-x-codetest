@@ -1,5 +1,5 @@
 import React, { useState, useEffect, Dispatch } from 'react';
-import { Grid, Paper } from '@material-ui/core';
+import { Stack,  CircularProgress, Grid, Paper } from '@mui/material';
 import { CryptoData } from '../model/cryptoData';
 import { UseStyles } from '../react-styles/cryptoCardStyle'
 import { GlobalState } from '../redux/type/global';
@@ -25,6 +25,11 @@ export default function CryptoCard(props: CryptoDataProps) {
     return (
         
         <Paper variant="outlined" >
+            { data === undefined &&
+                <Stack alignItems="center">
+                <CircularProgress style={{"padding" : "5px" }} />
+                </Stack>
+            }
                     { data  != undefined &&
             <Grid container spacing={0} className={classes.gridContainer} alignContent="flex-start" alignItems="flex-start" direction="row">
                <Grid container className={classes.gridBottom}>
