@@ -1,6 +1,6 @@
-import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
+import { createStyles, makeStyles } from "@mui/styles";
 
-export const UseStyles = makeStyles((theme: Theme) =>
+export const UseStyles = makeStyles(
 createStyles({
   gridItgem: {
     padding: "15px",

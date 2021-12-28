@@ -16,23 +16,20 @@ const initialItemData: CryptoDataState = {
       case actionTypes.GET_CRYPTO_DATA:
        
               var tmp = state.data.find(x => x.base === coinStringTable[action.request][0])
-              if (tmp) {
+              if (tmp != undefined) {
                 if (_.isEqual(tmp, action.data)) {
-                    return {
-                        ...state,
-                    }
+                 return state
                 } else {
-                    var index = state.data.findIndex(x => x.base === coinStringTable[action.request][0])
-                    state.data[index] = action.data
                     return {
                         ...state,
-                        data: state.data
+                        data: state.data.map(x => x.base  == coinStringTable[action.request][0] ?
+                          {...x, price : action.data.price, volume : action.data.volume, change: action.data.change} : x)
                     }
                 }
               } else {
                return {
                 ...state,
-                data: state.data.concat(action.data),
+                data: [...state.data, action.data],
                 }
             }
     }

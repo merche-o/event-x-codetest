@@ -1,5 +1,5 @@
 import React, { useState, useEffect, Dispatch } from 'react';
-import { Grid, Paper } from '@material-ui/core';
+import { Stack,  CircularProgress, Grid, Paper } from '@mui/material';
 import { CryptoData } from '../model/cryptoData';
 import { UseStyles } from '../react-styles/cryptoCardStyle'
 import { GlobalState } from '../redux/type/global';
@@ -20,15 +20,21 @@ export default function CryptoCard(props: CryptoDataProps) {
     useEffect(() => {
         dispatch(getCryptos(props.data))
         const timer = setInterval(
-       () =>  dispatch(getCryptos(props.data)), 30000)
+       () =>  {
+       dispatch(getCryptos(props.data))}, 30000)
     }, [data, dispatch, props.data])
     return (
         
         <Paper variant="outlined" >
+            { data === undefined &&
+                <Stack alignItems="center">
+                <CircularProgress style={{"padding" : "5px" }} />
+                </Stack>
+            }
                     { data  != undefined &&
             <Grid container spacing={0} className={classes.gridContainer} alignContent="flex-start" alignItems="flex-start" direction="row">
                <Grid container className={classes.gridBottom}>
-                <Grid item xs={12}  className={classes.coinName}> {data.base}</Grid>
+                <Grid item xs={12}  className={classes.coinName}> {coinStringTable[props.data][1]}</Grid>
                 <Grid item xs={12}  className={classes.coinValue}>${data.price}</Grid>
                 </Grid>
                 <Grid item xs={6}  className={classes.coinChangeLabel}>volume:</Grid>
