@@ -16,7 +16,7 @@ export default function SearchAppBar() {
       <AppBar position="static" className={classes.appBar} >
         <Toolbar>
           <div>
-          <InputBase placeholder="Search by codename (ex: btc, lsk)" className={classes.inputInput} style={{ width: 300, backgroundColor: 'white' }} onChange={(text) => {             console.log("inputTag change " +text.target.value)
+          <InputBase placeholder="Search by codename (ex: btc, lsk)" className={classes.inputInput} style={{ width: 300, backgroundColor: 'white' }} onChange={(text) => {
                 dispatch(launchSearch(text.target.value))}} />
           </div>
         </Toolbar>
