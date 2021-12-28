@@ -18,7 +18,6 @@ export default function CryptoCard(props: CryptoDataProps) {
     const data : CryptoData | undefined = useSelector((state: GlobalState) => state.cryptoDataState.data).find(x => x.base === coinStringTable[props.data][0])
 
     useEffect(() => {
-        
         dispatch(getCryptos(props.data))
         const timer = setInterval(
        () =>  {
@@ -35,7 +34,7 @@ export default function CryptoCard(props: CryptoDataProps) {
                     { data  != undefined &&
             <Grid container spacing={0} className={classes.gridContainer} alignContent="flex-start" alignItems="flex-start" direction="row">
                <Grid container className={classes.gridBottom}>
-                <Grid item xs={12}  className={classes.coinName}> {data.base}</Grid>
+                <Grid item xs={12}  className={classes.coinName}> {coinStringTable[props.data][1]}</Grid>
                 <Grid item xs={12}  className={classes.coinValue}>${data.price}</Grid>
                 </Grid>
                 <Grid item xs={6}  className={classes.coinChangeLabel}>volume:</Grid>
