@@ -9,7 +9,6 @@
   }
   type SearchData = {
     currentValue: string,
-    history: [string]
   }
   
   

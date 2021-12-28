@@ -14,12 +14,10 @@ export function searchData(searchData: SearchAction) {
         if (searchData.data == null) {
             searchData.data = {
                 currentValue: searchData.value,
-                history: [searchData.value]
             } as SearchData
+        } else {
+             searchData.data!.currentValue = searchData.value
         }
-
-        searchData.data!.currentValue = searchData.value
-        searchData.data!.history.push(searchData.value)
         dispatch(searchData)
 
     }
