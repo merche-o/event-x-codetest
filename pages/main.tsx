@@ -19,7 +19,7 @@ return(
  <SearchAppBar
       />
   
-    <h2 className={classes.title}>Cryptocurrency Realtime Price</h2>
+    <h2 className={classes.title}>Cryptocurrency Realtime Price {searchData}</h2>
     <Grid container spacing={0} alignContent="flex-start" alignItems="flex-start" direction="row">
     
      { data.filter(x => x.includes(searchData.toLowerCase()) ).map((value, index) => {
